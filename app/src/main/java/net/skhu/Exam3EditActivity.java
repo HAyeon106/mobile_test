@@ -6,10 +6,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.view.View;
 import android.widget.EditText;
@@ -49,10 +46,6 @@ public class Exam3EditActivity extends AppCompatActivity {
             }
         });
 
-         @Override
-         public boolean onOptionsMenu(Menu menu){
-             getMenuInflater().inflate(R.menu.menu_recycler_view, menu);
-             MenuItem menuItem = menu.
-        }
+
     }
 }

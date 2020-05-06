@@ -8,15 +8,14 @@ import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
-    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    static class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
 
         public ViewHolder(View view){
             super(view);
             textView = view.findViewById(R.id.textView);
-            view.setOnClickListener(this);
         }
     }
 
@@ -29,11 +28,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     @Override
-    public void onClick(View view){
-
-    }
-
-    @Override
     public int getItemCount() {
         return arrayList.size();
     }
@@ -41,7 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType){
         View view = layoutInflater.inflate(R.layout.item1, viewGroup, false);
-        return ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
