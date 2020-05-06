@@ -1,7 +1,15 @@
 package net.skhu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -15,6 +23,17 @@ public class Exam3Activity extends AppCompatActivity {
 
     RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<String> arrayList;
+
+    arrayList = new ArrayList<String>();
+        arrayList.add("one");
+        arrayList.add("two");
+
+    recyclerViewAdapter = new RecyclerViewAdapter(this, arrayList);
+    RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+    recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+    recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    recyclerView.setItemAnimator(new DefaultItemAnimator());
+    recyclerView.setAdapter(recyclerViewAdapter);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
