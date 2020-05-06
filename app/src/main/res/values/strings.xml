@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MidExam</string>
     <string name="create">생성</string>
+    <string name="save">저장</string>
 </resources>

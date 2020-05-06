@@ -9,12 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter>{
-    static class ViewHolder extends RecyclerView.ViewHolder{
+
+    static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView textView;
 
         public ViewHolder(View view){
             super(view);
             textView = view.findViewById(R.id.textView);
+            view.setOnClickListener(this);
         }
     }
 
@@ -24,6 +26,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter(Context context, ArrayList<String> arrayList){
         this.layoutInflater = LayoutInflater.from(context);
         this.arrayList = arrayList;
+    }
+
+    @Override
+    public void onClick(View view){
+
     }
 
     @Override
